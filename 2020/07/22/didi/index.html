@@ -22,7 +22,7 @@
 <meta name="keywords" content="" />
 
 
-<meta name="description" content="" />
+<meta name="description" content="1.css实现动画的方法有哪些？2.vuex的用法?3.组件间数据传递方式?父子通信：props/$event;$parent/$children;ref也可以访问组件实例；provide/in..." />
 
 
 <meta name="robots" content="all" />
@@ -33,7 +33,7 @@
 
 <title>
     
-    前端 |
+    滴滴前端面试问题 |
     
     Hexo
 </title>
@@ -136,135 +136,120 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <div>
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="滴滴前端面试问题">
+            
+            滴滴前端面试问题
+            
+        </h1>
+        <div class="post-meta">
     
-    <article class="post">
-    <h1 class="post-head">
-        前端
-    </h1>
-    <div class="post-body">
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
         
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2020/07/22</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h4 id="1-css实现动画的方法有哪些？"><a href="#1-css实现动画的方法有哪些？" class="headerlink" title="1.css实现动画的方法有哪些？"></a>1.css实现动画的方法有哪些？</h4><h4 id="2-vuex的用法"><a href="#2-vuex的用法" class="headerlink" title="2.vuex的用法?"></a>2.vuex的用法?</h4><h4 id="3-组件间数据传递方式"><a href="#3-组件间数据传递方式" class="headerlink" title="3.组件间数据传递方式?"></a>3.组件间数据传递方式?</h4><pre><code>父子通信：props/$event;$parent/$children;ref也可以访问组件实例；provide/inject API；$attrs/$listeners
+兄弟通信：Bus、VUEX
+跨级： $attrs/$listeners;Bus、VueX；provide/inject API</code></pre><h4 id="4-跨域怎么解决的：nginx代理，为什么不在nodeJs上面做？"><a href="#4-跨域怎么解决的：nginx代理，为什么不在nodeJs上面做？" class="headerlink" title="4.跨域怎么解决的：nginx代理，为什么不在nodeJs上面做？"></a>4.跨域怎么解决的：nginx代理，为什么不在nodeJs上面做？</h4><h4 id="我能想到的就这么多了"><a href="#我能想到的就这么多了" class="headerlink" title="(我能想到的就这么多了)"></a>(我能想到的就这么多了)</h4>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2020/07/22/baidu/" class="pre-post btn btn-default" title='百度前端面试题目含答案总结'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            百度前端面试题目含答案总结</span>
+    </a>
+    
+    
+    <a href="/2020/07/18/test/" class="next-post btn btn-default" title='test'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            test</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
     
 </div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+    appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'en'.toLowerCase()
+})
+</script>
+
+
+</div>
+
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Search
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-            <button type="button" class="search-form-submit" id="search-local">
-                localSearch</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Notification
-    </h3>
-    <div class="notification">
-        <p>
-    主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-    主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-    支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers" target="_blank" rel="noopener">Star一下</a>
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Social
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
         
-        <a href="//github.com/shenliyang" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="mailto:snippet@91h5.cc" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="联系QQ" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-css实现动画的方法有哪些？"><span class="toc-text">1.css实现动画的方法有哪些？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-vuex的用法"><span class="toc-text">2.vuex的用法?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-组件间数据传递方式"><span class="toc-text">3.组件间数据传递方式?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-跨域怎么解决的：nginx代理，为什么不在nodeJs上面做？"><span class="toc-text">4.跨域怎么解决的：nginx代理，为什么不在nodeJs上面做？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#我能想到的就这么多了"><span class="toc-text">(我能想到的就这么多了)</span></a></li></ol>
         
     </div>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Archives
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/"><i class="fa" aria-hidden="true">2020年07月</i></a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-    
-    
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Friends
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -301,10 +286,6 @@
         </div>
     </div>
 </div>
-
-
-<script src="/js/search.js?rev=@@hash.js"></script>
-
 
 
 

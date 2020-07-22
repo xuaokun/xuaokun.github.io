@@ -1,0 +1,326 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+<meta name="keywords" content="" />
+
+
+<meta name="description" content="1.如何判断一个变量是否是数组？注意：用typeOf方法判断[]和{}时，返回值都是Object,无法据此判断
+Array.isArray()方法判断，若是返回true使用Object.prot..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    百度前端面试题目含答案总结 |
+    
+    Hexo
+</title>
+
+<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    http://snippet.shenliyang.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='John Doe'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">
+                        Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/前端/"><i class="fa "></i>
+                                前端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/后端/"><i class="fa "></i>
+                                后端</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/工具/"><i class="fa "></i>
+                                工具</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="百度前端面试题目含答案总结">
+            
+            百度前端面试题目含答案总结
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2020/07/22</span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="1-如何判断一个变量是否是数组？"><a href="#1-如何判断一个变量是否是数组？" class="headerlink" title="1.如何判断一个变量是否是数组？"></a>1.如何判断一个变量是否是数组？</h1><p>注意：用typeOf方法判断[]和{}时，返回值都是Object,无法据此判断</p>
+<h4 id="Array-isArray-方法判断，若是返回true"><a href="#Array-isArray-方法判断，若是返回true" class="headerlink" title="Array.isArray()方法判断，若是返回true"></a>Array.isArray()方法判断，若是返回true</h4><h4 id="使用Object-prototype-toString-call-判断，如果值是-object-Array-则是数组"><a href="#使用Object-prototype-toString-call-判断，如果值是-object-Array-则是数组" class="headerlink" title="使用Object.prototype.toString.call()判断，如果值是[object Array],则是数组"></a>使用Object.prototype.toString.call()判断，如果值是[object Array],则是数组</h4><h1 id="2-position属性relative、absolute、fixed"><a href="#2-position属性relative、absolute、fixed" class="headerlink" title="2.position属性relative、absolute、fixed"></a>2.position属性relative、absolute、fixed</h1><h1 id="3-css3新特性"><a href="#3-css3新特性" class="headerlink" title="3.css3新特性"></a>3.css3新特性</h1><h2 id="3-1-过渡transition-CSS属性，花费时间、效果曲线-默认为ease-、延迟时间（默认为0）"><a href="#3-1-过渡transition-CSS属性，花费时间、效果曲线-默认为ease-、延迟时间（默认为0）" class="headerlink" title="3-1.过渡transition:CSS属性，花费时间、效果曲线(默认为ease)、延迟时间（默认为0）"></a>3-1.过渡transition:CSS属性，花费时间、效果曲线(默认为ease)、延迟时间（默认为0）</h2><p>例子<br><code>transition: width,5s,ease,.2s</code>//宽度从原始值到指定值的一个过渡，运动曲线ease、运动时间0.5s、0.2s后执行过渡</p>
+<p><code>transition：all,.5s</code>//所有属性从原始值到制定值的一个过渡，运动曲线ease,运动时间0.5秒</p>
+<h2 id="3-2-动画animation-动画名称，一个周期花费时间、运动曲线（默认为ease-动画延迟（默认0-播放次数（默认1）-是否反向播放动画-默认normal-是否暂停动画（默认runing"><a href="#3-2-动画animation-动画名称，一个周期花费时间、运动曲线（默认为ease-动画延迟（默认0-播放次数（默认1）-是否反向播放动画-默认normal-是否暂停动画（默认runing" class="headerlink" title="3-2.动画animation:动画名称，一个周期花费时间、运动曲线（默认为ease),动画延迟（默认0),播放次数（默认1）,是否反向播放动画(默认normal),是否暂停动画（默认runing)"></a>3-2.动画animation:动画名称，一个周期花费时间、运动曲线（默认为ease),动画延迟（默认0),播放次数（默认1）,是否反向播放动画(默认normal),是否暂停动画（默认runing)</h2><p>例子<br>/<em>执行一次logo2-line动画，运动时间2秒，运动曲线为 linear</em>/<br><code>animation: logo2-line 2s linear;</code><br>/<em>2秒后开始执行一次logo2-line动画，运动时间2秒，运动曲线为 linear</em>/<br><code>animation: logo2-line 2s linear 2s;</code><br>/<em>无限执行logo2-line动画，每次运动时间2秒，运动曲线为 linear，并且执行反向动画</em>/<br><code>animation: logo2-line 2s linear alternate infinite;</code><br>重要属性<code>animation-fill-mode: none | forwards | backwards | both;</code></p>
+<!-- none:不改变默认行为。
+    forwards: 当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+    backwards: 在animation-delay所指定的一段时间内，在显示动画之前，应用开始属性值（在第一个关键帧中定义）。
+    both:向前和向后填充模式都被应用。-->
+<h2 id="3-3-形状转换：2d和3d转换。"><a href="#3-3-形状转换：2d和3d转换。" class="headerlink" title="3-3.形状转换：2d和3d转换。"></a>3-3.形状转换：2d和3d转换。</h2><p><code>transform</code>:适用于2D或3D转换的元素<br><code>transform-origin</code>:转换元素的位置（围绕哪个点进行转换）。默认（x,y,z):(50%,50%,0)<br><code>transform:rotate(30deg)</code>//顺时针旋转30度<br><code>transform:translate(30px,30px)</code>//平移<br><code>transform:scale(.8)</code>//缩小至0.8<br><code>transform:skew(10deg,10deg)</code>//倾斜<br><code>transform:rotateX(180deg)</code>//绕x轴旋转180deg</p>
+<h2 id="3-4选择器"><a href="#3-4选择器" class="headerlink" title="3-4选择器"></a>3-4选择器</h2><p><code>p~ul</code> 选择前面有<code>&lt;p&gt;&lt;/p&gt;</code>元素的每个<code>&lt;ul&gt;&lt;/ul&gt;</code><br><code>a[src^=&quot;https&quot;]</code> 选择src属性值以https开头的每个元素<br><code>a[src$=&quot;.pdf&quot;]</code> 选择src属性以.pdf结尾的所有a元素<br><code>a[src*=&quot;abc&quot;]</code>    选择src属性中包含abc的所有a元素<br><code>:first-of-type</code><br><code>:last-of-type</code><br><code>:only-of-type</code><br><code>:only-child</code><br><code>:nth-child(n)</code><br><code>:nth-last-child(n)</code>从最后一个子元素开始计数<br><code>:nth-of-type(n)</code><br><code>:nth-of-last-type(n)</code><br><code>:last-child</code><br><code>:root</code> 选择文档的根元素<br><code>:empty 如p:empty</code> 选择没有子元素的每个<code>&lt;P&gt;</code><br><code>:target</code> 选择当前活动的#news元素<br><code>:enabled</code> 选择启用的元素<br><code>:disabled</code> 选择禁用的input元素<br><code>:checked</code> 如input:checked 选择每个被选中的input元素<br><code>:not(selector)</code> 如:not(p) 选择非p的每个元素<br><code>::selection</code> 选择被用户选取的元素部分</p>
+<h2 id="3-5-阴影"><a href="#3-5-阴影" class="headerlink" title="3-5.阴影"></a>3-5.阴影</h2><p><code>box-shadow</code>: 水平阴影的位置 垂直阴影的位置 模糊距离 阴影的大小 阴影的颜色 阴影开始方向（默认是从里往外，设置inset就是从外往里）;</p>
+<h2 id="3-6-边框"><a href="#3-6-边框" class="headerlink" title="3-6.边框"></a>3-6.边框</h2><p><code>border-image</code>: 图片url 图像边界向内偏移 图像边界的宽度(默认为边框的宽度) 用于指定在边框外部绘制偏移的量（默认0） 铺满方式–重复（repeat）、拉伸（stretch）或铺满（round）（默认：拉伸（stretch））;</p>
+<h2 id="3-7-边框圆角"><a href="#3-7-边框圆角" class="headerlink" title="3-7.边框圆角"></a>3-7.边框圆角</h2><p><code>border-radius</code>: n1,n2,n3,n4;<br>/<em>n1-n4四个值的顺序是：左上角，右上角，右下角，左下角。</em>/</p>
+<h2 id="3-8-背景新增属性"><a href="#3-8-背景新增属性" class="headerlink" title="3-8.背景新增属性"></a>3-8.背景新增属性</h2><ul>
+<li><p><code>background-clip</code>:指定背景绘制区域<br>默认border-box,从边框开始绘制<br>padding-box,从padding开始绘制，不算border,相当于把border那里的border给裁掉<br>content-box,只在内容区绘制，不算padding和border  </p>
+</li>
+<li><p><code>background-origin</code>:background-origin 属性规定   </p>
+</li>
+<li><p><code>background-position</code>:属性相对于什么位置来定位.<br>默认padding-box：背景图像相对于内边距来定位<br>border-box:背景图像相对于边框盒来定位<br>content-box:背景图像相对于内容框来定位  </p>
+</li>
+<li><p><code>background-size</code>:指定背景的大小<br>contain:保持图像纵横比，缩放成适合背景区域大小的最大大小<br>cover:保持纵横比缩放成背景定位区域的最小大小<br>auto 100%;bckground-repeat:repeat-x:背景高度自适应，并且背景循环<br>400px:背景宽度400px,高度自适应</p>
+<h2 id="3-9-反射"><a href="#3-9-反射" class="headerlink" title="3-9.反射"></a>3-9.反射</h2><p><code>-webkit-box-reflect:方向[ above-上 | below-下 | right-右 | left-左 ]，偏移量，遮罩图片</code></p>
+<h2 id="3-10-文字"><a href="#3-10-文字" class="headerlink" title="3-10.文字"></a>3-10.文字</h2><p><code>word-break</code>:normal（默认）/keep-all：只能在半角空格和连字符处换行/break-all:允许在单词内换行<br><code>word-wrap</code>:normal/break-word:允许在长单词或url内部换行</p>
+<pre><code>超出省略号：禁止换行、超出隐藏、超出省略  </code></pre><p><code>overflow:hidden;</code><br><code>white-space:nowrap;</code><br><code>text-overflow:ellipsis;</code><br>多行超出省略号：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">html</span>&gt;</span>    </span><br><span class="line">                <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">style</span>&gt;</span> </span><br><span class="line">                div</span><br><span class="line">                &#123;</span><br><span class="line"><span class="css">                    <span class="selector-tag">width</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line"><span class="css">                    <span class="selector-tag">margin</span><span class="selector-pseudo">:0</span> <span class="selector-tag">auto</span>;</span></span><br><span class="line">                    overflow : hidden;</span><br><span class="line"><span class="css">                    <span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line">                    text-overflow: ellipsis;</span><br><span class="line">                    display: -webkit-box;</span><br><span class="line">                    -webkit-line-clamp: 2;</span><br><span class="line">                    -webkit-box-orient: vertical;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">                </span><br><span class="line">                <span class="tag">&lt;<span class="name">div</span>&gt;</span>这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏这里将会超出隐藏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                </span><br><span class="line">                </span><br><span class="line">                <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>修改边框内容距离</code></pre><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span> </span><br><span class="line">    div&#123;</span><br><span class="line"><span class="css">        <span class="selector-tag">width</span><span class="selector-pseudo">:400px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">margin</span><span class="selector-pseudo">:0</span> <span class="selector-tag">auto</span>;</span></span><br><span class="line">        overflow : hidden;</span><br><span class="line"><span class="css">        <span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">solid</span> <span class="selector-id">#ccc</span>;</span></span><br><span class="line">        text-overflow: ellipsis;</span><br><span class="line"><span class="css">        <span class="selector-tag">padding</span><span class="selector-pseudo">:0</span> 10<span class="selector-tag">px</span>;</span></span><br><span class="line">        display: -webkit-box;</span><br><span class="line">        -webkit-line-clamp: 2;</span><br><span class="line">        -webkit-box-orient: vertical;</span><br><span class="line"><span class="css">        <span class="selector-tag">line-height</span><span class="selector-pseudo">:30px</span>;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">height</span><span class="selector-pseudo">:60px</span>;</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>文字阴影<br>text-shadow:水平阴影，垂直阴影，模糊的距离，以及阴影的颜色。<br>text-shadow: 0 0 10px #f00;</p>
+<h2 id="3-12-颜色"><a href="#3-12-颜色" class="headerlink" title="3-12.颜色"></a>3-12.颜色</h2><p>rgba(rgb为颜色值，a为透明度)<br><code>hsla</code>:h:色相”，“s：饱和度”，“l：亮度”，“a：透明度”<br><code>color</code>: hsla( 112, 72%, 33%, 0.68);<br><code>background-color</code>: hsla( 49, 65%, 60%, 0.68);<br>使用hsla时父元素的透明度不会影响子元素  </p>
+<h2 id="3-13-渐变"><a href="#3-13-渐变" class="headerlink" title="3-13.渐变"></a>3-13.渐变</h2><h2 id="3-14-滤镜filter"><a href="#3-14-滤镜filter" class="headerlink" title="3-14.滤镜filter"></a>3-14.滤镜filter</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>原图<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>黑白色filter: grayscale(100%)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter: grayscale(100%);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>褐色filter:sepia(1)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:sepia(1);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>饱和度saturate(2)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:saturate(2);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>色相旋转hue-rotate(90deg)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:hue-rotate(90deg);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>反色filter:invert(1)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:invert(1);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>透明度opacity(.5)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:opacity(.5);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>亮度brightness(.5)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:brightness(.5);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>对比度contrast(2)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:contrast(2);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>模糊blur(3px)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:blur(3px);"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>阴影drop-shadow(5px 5px 5px #000)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.jpg"</span> <span class="attr">style</span>=<span class="string">"filter:drop-shadow(5px 5px 5px #000);"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-15-flex"><a href="#3-15-flex" class="headerlink" title="3-15.flex"></a>3-15.flex</h2><h2 id="3-16-栅格布局"><a href="#3-16-栅格布局" class="headerlink" title="3-16.栅格布局"></a>3-16.栅格布局</h2><h2 id="3-17-多列布局"><a href="#3-17-多列布局" class="headerlink" title="3-17.多列布局"></a>3-17.多列布局</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.newspaper</span><br><span class="line">&#123;</span><br><span class="line">    column-count: 3;</span><br><span class="line">    -webkit-column-count: 3;</span><br><span class="line">    -moz-column-count: 3;</span><br><span class="line">    column-rule:2px solid #000;</span><br><span class="line">    -webkit-column-rule:2px solid #000;</span><br><span class="line">    -mox-column-rule:2px solid #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-18-盒模型定义"><a href="#3-18-盒模型定义" class="headerlink" title="3.18.盒模型定义"></a>3.18.盒模型定义</h2><p><code>box-sizing</code>：border-box 边框和padding包含在元素宽高之内  </p>
+<pre><code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;content-box 边框和padding不包含在元素宽高之内</code></pre><h2 id="3-19-媒体查询，就在监听屏幕尺寸的变化，在不同尺寸的时候显示不同的样式！"><a href="#3-19-媒体查询，就在监听屏幕尺寸的变化，在不同尺寸的时候显示不同的样式！" class="headerlink" title="3-19.媒体查询，就在监听屏幕尺寸的变化，在不同尺寸的时候显示不同的样式！"></a>3-19.媒体查询，就在监听屏幕尺寸的变化，在不同尺寸的时候显示不同的样式！</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span> </span><br><span class="line">			<span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">			<span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">			body &#123;</span><br><span class="line">				background-color: pink;</span><br><span class="line">			&#125;</span><br><span class="line"><span class="css">			<span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">960px</span>) &#123;</span></span><br><span class="line">				body &#123;</span><br><span class="line">					background-color: darkgoldenrod;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"><span class="css">			<span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">480px</span>) &#123;</span></span><br><span class="line">				body &#123;</span><br><span class="line">					background-color: lightgreen;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">			</span><br><span class="line">			<span class="tag">&lt;<span class="name">h1</span>&gt;</span>重置浏览器窗口查看效果！<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>如果媒体类型屏幕的可视窗口宽度小于 960 px ，背景颜色将改变。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">p</span>&gt;</span>如果媒体类型屏幕的可视窗口宽度小于 480 px ，背景颜色将改变。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">			</span><br><span class="line">			<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="3-20-混合模式"><a href="#3-20-混合模式" class="headerlink" title="3-20.混合模式"></a>3-20.混合模式</h2><p><code>background-blend-mode</code>:同一个元素的背景图片和颜色<br><code>mix-blend-mode</code>:父子元素的背景图片和颜色</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2020/07/22/didi/" class="next-post btn btn-default" title='滴滴前端面试问题'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            滴滴前端面试问题</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+
+<div id="vcomments" class="valine"></div>
+
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+<script>
+new Valine({
+    av: AV,
+    el: '#vcomments',
+    appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+    appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+    placeholder: '说点什么吧',
+    notify: false,
+    verify: true,
+    avatar: 'mm',
+    meta: 'nick,mail'.split(','),
+    pageSize: '10',
+    path: window.location.pathname,
+    lang: 'en'.toLowerCase()
+})
+</script>
+
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-如何判断一个变量是否是数组？"><span class="toc-text">1.如何判断一个变量是否是数组？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-isArray-方法判断，若是返回true"><span class="toc-text">Array.isArray()方法判断，若是返回true</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用Object-prototype-toString-call-判断，如果值是-object-Array-则是数组"><span class="toc-text">使用Object.prototype.toString.call()判断，如果值是[object Array],则是数组</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-position属性relative、absolute、fixed"><span class="toc-text">2.position属性relative、absolute、fixed</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-css3新特性"><span class="toc-text">3.css3新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-过渡transition-CSS属性，花费时间、效果曲线-默认为ease-、延迟时间（默认为0）"><span class="toc-text">3-1.过渡transition:CSS属性，花费时间、效果曲线(默认为ease)、延迟时间（默认为0）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-动画animation-动画名称，一个周期花费时间、运动曲线（默认为ease-动画延迟（默认0-播放次数（默认1）-是否反向播放动画-默认normal-是否暂停动画（默认runing"><span class="toc-text">3-2.动画animation:动画名称，一个周期花费时间、运动曲线（默认为ease),动画延迟（默认0),播放次数（默认1）,是否反向播放动画(默认normal),是否暂停动画（默认runing)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-形状转换：2d和3d转换。"><span class="toc-text">3-3.形状转换：2d和3d转换。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4选择器"><span class="toc-text">3-4选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-阴影"><span class="toc-text">3-5.阴影</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-边框"><span class="toc-text">3-6.边框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-边框圆角"><span class="toc-text">3-7.边框圆角</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-背景新增属性"><span class="toc-text">3-8.背景新增属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-反射"><span class="toc-text">3-9.反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-文字"><span class="toc-text">3-10.文字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12-颜色"><span class="toc-text">3-12.颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-13-渐变"><span class="toc-text">3-13.渐变</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-14-滤镜filter"><span class="toc-text">3-14.滤镜filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-15-flex"><span class="toc-text">3-15.flex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-16-栅格布局"><span class="toc-text">3-16.栅格布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-17-多列布局"><span class="toc-text">3-17.多列布局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-18-盒模型定义"><span class="toc-text">3.18.盒模型定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-19-媒体查询，就在监听屏幕尺寸的变化，在不同尺寸的时候显示不同的样式！"><span class="toc-text">3-19.媒体查询，就在监听屏幕尺寸的变化，在不同尺寸的时候显示不同的样式！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-20-混合模式"><span class="toc-text">3-20.混合模式</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
